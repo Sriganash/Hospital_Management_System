@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.20955315870570107" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DrController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #0C0A89;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="76.0" layoutY="44.0">
+               <image>
+                  <Image url="@img%202.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="23.0" layoutY="173.0" prefHeight="41.0" prefWidth="224.0" text="DOCTOR" textFill="#fffefe">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="updatepRecord" defaultButton="true" layoutY="249.0" mnemonicParsing="false" onAction="#update_onclick" prefHeight="51.0" prefWidth="269.0" text="UPDATE PATIENT RECORD">
+               <font>
+                  <Font name="Serif Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="NW_RESIZE" />
+               </cursor>
+            </Button>
+            <Button fx:id="lab_records" layoutY="300.0" mnemonicParsing="false" onAction="#lab_onclick" prefHeight="51.0" prefWidth="269.0" text="LAB RECORDS">
+               <font>
+                  <Font name="Serif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="presription" layoutY="351.0" mnemonicParsing="false" onAction="#presc_onclick" prefHeight="51.0" prefWidth="269.0" text="PRESCRIPTION">
+               <font>
+                  <Font name="Serif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="appointments" layoutY="402.0" mnemonicParsing="false" onAction="#viewappoint_onclick" prefHeight="51.0" prefWidth="269.0" text="VIEW APPOINTMENTS">
+               <font>
+                  <Font name="Serif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="logout" layoutX="83.0" layoutY="624.0" mnemonicParsing="false" onAction="#l_onclick" prefHeight="51.0" prefWidth="104.0" text="LOGOUT" textFill="#111111">
+               <font>
+                  <Font name="Serif Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="profile" layoutX="2.0" layoutY="453.0" mnemonicParsing="false" onAction="#viewprofile_onclick" prefHeight="51.0" prefWidth="269.0" text="VIEW PROFILE">
+               <font>
+                  <Font name="Serif Bold" size="14.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Label alignment="CENTER" layoutX="261.0" layoutY="55.0" text="Faith Multispeciality Hospital" textAlignment="CENTER" textFill="#0c0a89" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="Serif Bold" size="48.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="375.0" layoutY="132.0" text="We are here to make you healthy......" textAlignment="CENTER" textFill="#0c0a89" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+               <font>
+                  <Font name="Serif Bold" size="30.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="patient_rno_pane" layoutX="56.0" layoutY="138.0" prefHeight="129.0" prefWidth="911.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="55.0" text="Patient ID:">
+                     <font>
+                        <Font name="Serif Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="recno_textf" layoutX="296.0" layoutY="52.0" prefHeight="34.0" prefWidth="374.0" />
+                  <Button fx:id="recordprescription_select" layoutX="724.0" layoutY="52.0" mnemonicParsing="false" onAction="#choose_recpresc_onclick" prefHeight="34.0" prefWidth="88.0" text="ENTER">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="update_patient_pane" layoutX="36.0" layoutY="150.0" prefHeight="518.0" prefWidth="951.0" visible="false">
+               <children>
+                  <Label layoutX="64.0" layoutY="34.0" text="Patient ID:">
+                     <font>
+                        <Font name="Serif Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="64.0" layoutY="65.0" text="Name:">
+                     <font>
+                        <Font name="Serif Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="64.0" layoutY="96.0" text="Age:">
+                     <font>
+                        <Font name="Serif Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prno_medhis_label" layoutX="228.0" layoutY="34.0" prefHeight="17.0" prefWidth="170.0" text="ABCD">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name_medhis_label" layoutX="228.0" layoutY="65.0" prefHeight="17.0" prefWidth="170.0" text="ABCD">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="age_medhis_label" layoutX="228.0" layoutY="96.0" prefHeight="17.0" prefWidth="170.0" text="ABCD">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prevhis_medhis_label" alignment="TOP_LEFT" layoutX="64.0" layoutY="160.0" prefHeight="106.0" prefWidth="699.0" text="Label">
+                     <font>
+                        <Font name="Serif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="64.0" layoutY="134.0" text="Previous Medical History">
+                     <font>
+                        <Font name="Serif Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="64.0" layoutY="275.0" text="Add to Medical History">
+                     <font>
+                        <Font name="Serif Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="add_history" layoutX="64.0" layoutY="301.0" prefHeight="137.0" prefWidth="699.0" />
+                  <Button fx:id="submit_medhis_btn" layoutX="398.0" layoutY="457.0" mnemonicParsing="false" onAction="#submit_medhis_onclick" prefHeight="34.0" prefWidth="88.0" text="SUBMIT">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="add_test_pane" layoutX="54.0" layoutY="152.0" prefHeight="500.0" prefWidth="911.0" visible="false">
+               <children>
+                  <ChoiceBox fx:id="test_choicebox" layoutX="219.0" layoutY="82.0" prefHeight="34.0" prefWidth="474.0" />
+                  <Label layoutX="122.0" layoutY="86.0" text="Tests:">
+                     <font>
+                        <Font name="Serif Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addtest_btn" layoutX="747.0" layoutY="84.0" mnemonicParsing="false" onAction="#addtolabel_onclick" prefHeight="29.0" prefWidth="77.0" text="ADD">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="test_label" alignment="TOP_LEFT" layoutX="122.0" layoutY="166.0" prefHeight="252.0" prefWidth="699.0" text="Label">
+                     <font>
+                        <Font name="Serif Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="submit_test_btn" layoutX="420.0" layoutY="439.0" mnemonicParsing="false" onAction="#submit_test_onclick" prefHeight="34.0" prefWidth="104.0" text="SUBMIT">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="testpatient_rno_pane" layoutX="44.0" layoutY="203.0" prefHeight="200.0" prefWidth="939.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="51.0" text="Patient ID:">
+                     <font>
+                        <Font name="Serif Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="testrno_textf" layoutX="389.0" layoutY="48.0" prefHeight="34.0" prefWidth="374.0" />
+                  <Button fx:id="checktest_btn" layoutX="278.0" layoutY="121.0" mnemonicParsing="false" onAction="#checktest_onclick" prefHeight="34.0" prefWidth="170.0" text="Check Test Reports">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="add_testbtn" layoutX="491.0" layoutY="121.0" mnemonicParsing="false" onAction="#test_onclick" prefHeight="34.0" prefWidth="170.0" text="Add Tests">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="prescription_pane" layoutX="56.0" layoutY="152.0" prefHeight="500.0" prefWidth="911.0" visible="false">
+               <children>
+                  <Label layoutX="87.0" layoutY="55.0" text="Medicine">
+                     <font>
+                        <Font name="Serif Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="med_choiceb" layoutX="87.0" layoutY="96.0" prefHeight="29.0" prefWidth="296.0" />
+                  <ChoiceBox fx:id="med_day_choice" layoutX="525.0" layoutY="96.0" prefHeight="29.0" prefWidth="170.0" />
+                  <ChoiceBox fx:id="med_times_choice" layoutX="404.0" layoutY="96.0" prefHeight="29.0" prefWidth="103.0" />
+                  <Button fx:id="add_to_presc_btn" layoutX="746.0" layoutY="94.0" mnemonicParsing="false" onAction="#add_to_presc_onclick" prefHeight="34.0" prefWidth="88.0" text="ADD">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="87.0" layoutY="179.0" text="Prescription">
+                     <font>
+                        <Font name="Serif Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="presc_label" alignment="TOP_LEFT" layoutX="87.0" layoutY="216.0" prefHeight="200.0" prefWidth="699.0" text="Label">
+                     <font>
+                        <Font name="Serif Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="submit_presc_btn" layoutX="393.0" layoutY="444.0" mnemonicParsing="false" onAction="#submit_presc_onlick" prefHeight="34.0" prefWidth="88.0" text="SUBMIT">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="appointment_pane" layoutX="36.0" layoutY="154.0" prefHeight="512.0" prefWidth="951.0" visible="false">
+               <children>
+                  <Label layoutX="80.0" layoutY="30.0" text="Appointments:">
+                     <font>
+                        <Font name="Serif Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="142.0" layoutY="87.0" text="Date">
+                     <font>
+                        <Font name="Serif Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="282.0" layoutY="87.0" text="Time">
+                     <font>
+                        <Font name="Serif Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="421.0" layoutY="87.0" text="Name of the Patient">
+                     <font>
+                        <Font name="Serif Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="718.0" layoutY="87.0" text="Patient ID">
+                     <font>
+                        <Font name="Serif Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="date_label" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="107.0" layoutY="124.0" prefHeight="358.0" prefWidth="114.0">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="time_label" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="256.0" layoutY="124.0" prefHeight="358.0" prefWidth="114.0">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pname_label" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="403.0" layoutY="124.0" prefHeight="358.0" prefWidth="224.0">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pid_label" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="655.0" layoutY="124.0" prefHeight="358.0" prefWidth="224.0">
+                     <font>
+                        <Font name="Serif Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label fx:id="profile_label" alignment="TOP_LEFT" layoutX="73.0" layoutY="173.0" prefHeight="478.0" prefWidth="871.0" text="PROFILE">
+               <font>
+                  <Font name="Serif Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="test_report_label" alignment="TOP_CENTER" layoutX="73.0" layoutY="177.0" prefHeight="471.0" prefWidth="871.0" text="TEST REPORTS">
+               <font>
+                  <Font name="Serif Bold" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

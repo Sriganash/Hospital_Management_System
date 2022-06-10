@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.20955315870570107" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PharmacyController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #0C0A89;">
+            <children>
+                <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="76.0" layoutY="44.0">
+                    <image>
+                        <Image url="@img 2.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="23.0" layoutY="173.0" prefHeight="41.0" prefWidth="224.0" text="PHARMACIST" textFill="#fffefe">
+                    <font>
+                        <Font name="Serif Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="addmed_btn" layoutY="312.0" mnemonicParsing="false" onAction="#addmed_onclick" prefHeight="51.0" prefWidth="269.0" text="ADD MEDICINE">
+                    <font>
+                        <Font name="Serif Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="remmed_btn" layoutY="363.0" mnemonicParsing="false" onAction="#remmed_onclick" prefHeight="51.0" prefWidth="269.0" text="REMOVE MEDICINE">
+                    <font>
+                        <Font name="Serif Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="status_btn" layoutY="414.0" mnemonicParsing="false" onAction="#status_onclick" prefHeight="51.0" prefWidth="269.0" text="AVAILABILITY STATUS">
+                    <font>
+                        <Font name="Serif Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="logout" layoutX="83.0" layoutY="624.0" mnemonicParsing="false" onAction="#l_onclick" prefHeight="51.0" prefWidth="104.0" text="LOGOUT" textFill="#111111">
+                    <font>
+                        <Font name="Serif Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <Label alignment="CENTER" layoutX="261.0" layoutY="55.0" text="Faith Multispeciality Hospital" textAlignment="CENTER" textFill="#0c0a89" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                    <font>
+                        <Font name="Serif Bold" size="48.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="375.0" layoutY="132.0" text="We are here to make you healthy......" textAlignment="CENTER" textFill="#0c0a89" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                    <font>
+                        <Font name="Serif Bold" size="30.0" />
+                    </font>
+                </Label>
+                <AnchorPane fx:id="add_pane" layoutX="40.0" layoutY="182.0" prefHeight="435.0" prefWidth="940.0" visible="false">
+                    <children>
+                        <Label layoutX="212.0" layoutY="66.0" text="Name of the Medicine">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="212.0" layoutY="120.0" text="Medicine ID">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="215.0" layoutY="175.0" text="Price">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="214.0" layoutY="224.0" text="Stock">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="212.0" layoutY="274.0" text="Type of Medicine">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="add_name" layoutX="429.0" layoutY="65.0" prefHeight="23.0" prefWidth="286.0" />
+                        <TextField fx:id="add_id" layoutX="429.0" layoutY="119.0" prefHeight="23.0" prefWidth="286.0" />
+                        <TextField fx:id="add_price" layoutX="429.0" layoutY="174.0" prefHeight="23.0" prefWidth="286.0" />
+                        <TextField fx:id="add_stock" layoutX="429.0" layoutY="223.0" prefHeight="23.0" prefWidth="286.0" />
+                        <ChoiceBox fx:id="add_type" layoutX="429.0" layoutY="273.0" prefHeight="25.0" prefWidth="286.0" />
+                        <Button fx:id="add_btn" layoutX="367.0" layoutY="359.0" mnemonicParsing="false" onAction="#add_onclick" prefHeight="34.0" prefWidth="169.0" text="ADD MEDICINE">
+                            <font>
+                                <Font name="Serif Bold" size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="remove_pane" layoutX="56.0" layoutY="182.0" prefHeight="387.0" prefWidth="908.0" visible="false">
+                    <children>
+                        <Label layoutX="208.0" layoutY="83.0" text="Medicine ID">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="remove_id" layoutX="407.0" layoutY="77.0" prefHeight="34.0" prefWidth="286.0" />
+                        <Label fx:id="remove_label" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="266.0" prefHeight="89.0" prefWidth="733.0" text="Medicine Record Deleted">
+                            <font>
+                                <Font name="Serif Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="remove_btn" layoutX="346.0" layoutY="200.0" mnemonicParsing="false" onAction="#remove_onclick" prefHeight="41.0" prefWidth="197.0" text="REMOVE MEDICINE">
+                            <font>
+                                <Font name="Serif Bold" size="16.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="209.0" layoutY="136.0" text="Medicine Name">
+                            <font>
+                                <Font name="Serif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="remove_name" layoutX="408.0" layoutY="130.0" prefHeight="34.0" prefWidth="286.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="status_pane" layoutX="46.0" layoutY="166.0" prefHeight="487.0" prefWidth="926.0">
+                    <children>
+                        <Label layoutX="103.0" layoutY="38.0" text="Medicine Availability">
+                            <font>
+                                <Font name="Serif Bold" size="30.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="247.0" layoutY="168.0" text="Medicine Name">
+                            <font>
+                                <Font name="Serif Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="247.0" layoutY="230.0" text="Stock Remaining">
+                            <font>
+                                <Font name="Serif Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <ChoiceBox fx:id="medname_avail_choice" layoutX="473.0" layoutY="165.0" prefHeight="34.0" prefWidth="299.0" />
+                        <Label fx:id="med_stock_label" layoutX="473.0" layoutY="227.0" prefHeight="34.0" prefWidth="299.0" text="Stock Remaining">
+                            <font>
+                                <Font name="Serif Regular" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="chkstock_btn" layoutX="394.0" layoutY="331.0" mnemonicParsing="false" onAction="#chkstock_onclick" text="CHECK STOCK">
+                            <font>
+                                <Font name="Serif Bold" size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
